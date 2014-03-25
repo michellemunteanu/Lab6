@@ -3,36 +3,42 @@
 
 int main(int argc, char *argv[])
 {
+    int mflag=0;
+    int fflag=0;
+    int rflag=0; 
+    int lflag=0;
     if (argc == 1)
     {
         printf("You must supply -m, -f, -r, or -l\n");
         return 1;
     }
-
     for (int i = 1; i < argc; i++)
     {
-        if (strcmp(argv[i], "-l") == 0)
+	if (strcmp(argv[i], "-l") == 0)
         {
-            printf("Salve\n");
+            lflag=1;
         }
         else if (strcmp(argv[i], "-f") == 0)
         {
-            printf("Bonjour\n");
+            fflag=1;
         }
         else if (strcmp(argv[i], "-m") == 0)
         {
-            printf("Howdy\n");
+            mflag=1;
         }
-	else if (strcmp(argv[i], "-r") == 0)
+        else if (strcmp(argv[i], "-r") == 0)
         {
-            printf("Salut\n");
+            rflag=1;
         }
-        else
+	else
         {
-            printf("Use -m, -f, -r, or -l\n");
-            return 1;
+            printf("Note: -m, -f, -r, or -l are the only valid options\n");
         }
     }
 
+    if(mflag) printf("Howdy\n");
+    if(fflag) printf("Bonjour\n");
+    if(rflag) printf("Salut\n");
+    if(lflag) printf("Salve\n");
     return 0;
 }
