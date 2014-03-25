@@ -5,7 +5,7 @@ int main(int argc, char *argv[])
 {
     if (argc == 1)
     {
-        printf("You must supply -m, -f, or -l\n");
+        printf("You must supply -m, -f, -r, or -l\n");
         return 1;
     }
 
@@ -23,9 +23,13 @@ int main(int argc, char *argv[])
         {
             printf("Howdy\n");
         }
+	else if (strcmp(argv[i], "-r") == 0)
+        {
+            printf("Salut\n");
+        }
         else
         {
-            printf("Use -m, -f, or -l\n");
+            printf("Use -m, -f, -r, or -l\n");
             return 1;
         }
     }
